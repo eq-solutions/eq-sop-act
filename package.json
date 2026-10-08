@@ -1,0 +1,38 @@
+{
+  "name": "@eq-solutions/sop-act",
+  "version": "1.0.0",
+  "private": false,
+  "license": "UNLICENSED",
+  "author": "CDC Solutions Pty Ltd",
+  "description": "NSW Building and Construction Industry Security of Payment Act 1999 day-count rules (payment schedule, due date for payment, adjudication windows) and the NSW business-day calendar, shared by EQ Service and EQ Ops so both compute the same dates. Not legal advice.",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eq-solutions/eq-sop-act.git"
+  },
+  "keywords": ["eq-solutions", "security-of-payment", "sopa", "nsw", "payment-claims", "business-days"],
+  "main": "index.js",
+  "types": "index.ts",
+  "exports": {
+    ".": { "types": "./index.ts", "default": "./index.js" },
+    "./business-days": { "types": "./business-days.ts", "default": "./business-days.js" },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js", "index.ts",
+    "sop-act-nsw.js", "sop-act-nsw.ts",
+    "business-days.js", "business-days.ts",
+    "README.md", "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node --import tsx --test test/*.test.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5"
+  },
+  "publishConfig": { "access": "restricted" },
+  "engines": { "node": ">=20.4" }
+}
